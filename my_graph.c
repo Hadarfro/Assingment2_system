@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "my_mat.c"
 #include "my_mat.h"
 
 
-int my_graph() {
+int main() {
+    
 char letter;
 int mat[10][10];
     printf("enter a letter:");
