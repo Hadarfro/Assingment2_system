@@ -7,7 +7,7 @@ int main() {
 char letter;
 int mat[10][10];
     printf("enter a letter:");
-    while (scanf("%c", &letter)!='D') {
+    while (scanf("%c", &letter)!='D'||scanf("%c", &letter)!='EOF') {
      if(letter == 'A'){
          getMatrix(mat);
          }

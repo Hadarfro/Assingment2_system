@@ -27,15 +27,17 @@ void isPath(int graph[10][10]){
 } 
 
 int isPathExist(int graph[10][10],int i,int j){
-    if (graph[i][j] != 0) {
-        // There is a direct edge from i to j
-        return 1;
+    if (graph[i][j] == 0) {
+        // There isn't a direct edge from i to j
+        return 0;
     }
 
     // Check if there is an indirect path through other vertices
     for (int k = 0; k < 10; k++) {
-        if (graph[i][k] != 0 && isPathExist(graph, k, j)) {
-            return 1;
+        if(k != i && k != j){
+         if (graph[i][k] != 0 && isPathExist(graph, k, j)) {
+                return 1;
+             }
         }
     }
 
