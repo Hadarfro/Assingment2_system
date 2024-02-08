@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
+#include "my_mat.c"
 
 
 int main() {
@@ -7,7 +8,7 @@ int main() {
 char letter;
 int mat[10][10];
     printf("enter a letter:");
-    while (scanf("%c", &letter)!='D'||scanf("%c", &letter)!='EOF') {
+    while (scanf("%c", &letter)!='D'||scanf("%c", &letter)!= EOF) {
      if(letter == 'A'){
          getMatrix(mat);
          }
