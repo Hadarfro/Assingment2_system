@@ -4,20 +4,21 @@
 
 
 int main() {
-    
 char letter;
 int mat[10][10];
     printf("enter a letter:");
-    while (scanf("%c", &letter)!='D'||scanf("%c", &letter)!= EOF) {
-     if(letter == 'A'){
+    letter = scanf("%c", &letter);
+    while (letter!='D'||letter!= EOF) {
+      if(letter == 'A'){
          getMatrix(mat);
          }
       if(letter == 'B'){
              isPath(mat);
         }
-        if (letter == 'c') {
+      if (letter == 'c') {
             shortestPath(mat);
          } 
+      letter = scanf("%c", &letter);
      }
 return 0;
 }

@@ -1,5 +1,5 @@
-#ifndef MY_MAT_H
-#define MY_MAT_H
+#ifndef _MY_MAT_H
+#define _MY_MAT_H
 
 void getMatrix(int mat[10][10]);
 void isPath(int graph[10][10]);

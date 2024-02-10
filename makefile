@@ -3,7 +3,7 @@ AR = ar
 CFLAGS = -Wall -g
 AFLAGS = rcs
 
-.PHONY: all clean
+.PHONY: all clean 
 
 all: connections
 
@@ -12,7 +12,6 @@ connections: my_graph.o libMy_mat.a
 	       
 libMy_mat.a: my_mat.o   
 	$(AR) $(AFLAGS) libMy_mat.a my_mat.o
-
 
 my_mat.o: my_mat.c my_mat.h
 	$(CC) $(CFLAGS) -c my_mat.c 
