@@ -8,7 +8,7 @@ AFLAGS = rcs
 all: connections
 
 connections: my_graph.o libMy_mat.a
-	$(CC) $(CFLAGS) -c my_graph.o libMy_mat.a -o connections
+	$(CC) $(CFLAGS)  my_graph.o libMy_mat.a -o connections
 	       
 libMy_mat.a: my_mat.o   
 	$(AR) $(AFLAGS) libMy_mat.a my_mat.o
