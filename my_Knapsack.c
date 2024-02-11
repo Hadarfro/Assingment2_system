@@ -11,11 +11,9 @@ char items[size];
 
 
 void  insertToList(){
-    int value,whight;
-    char item;
     for (size_t i = 0; i < 5; i++) {
             printf("enter item:");
-            scanf("%c", (items[i]));
+            scanf("%c", &(items[i]));
             printf("enter value:");
             scanf("%d", &(values[i]));
             printf("enter whight:");
@@ -48,12 +46,10 @@ int knapSack (int weights[], int values[] , int selected_bool[]){
             w -= wItem;
             selected_bool[j] = 1;
         }
-    }
-    return sumValue;  
+    }   
   }
+  return sumValue;
 }
-
-
 
 //*********************start main******************************
 int main(){
