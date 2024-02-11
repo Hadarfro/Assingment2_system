@@ -6,8 +6,8 @@
 int main() {
 char letter;
 int mat[10][10];
-    printf("enter a letter:");
-    letter = scanf("%c", &letter);
+    printf("enter a letter:\n");
+    letter = getchar();
     while (letter!='D'||letter!= EOF) {
       if(letter == 'A'){
          getMatrix(mat);
@@ -18,7 +18,8 @@ int mat[10][10];
       if (letter == 'c') {
             shortestPath(mat);
          } 
-      letter = scanf("%c", &letter);
+      printf("enter a letter:\n");
+      letter = getchar();
      }
 return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "my_mat.h"
 #define whight_bag 20
 #define size 5
 
@@ -14,14 +15,11 @@ void  insertToList(){
     char item;
     for (size_t i = 0; i < 5; i++) {
             printf("enter item:");
-            scanf("%c", &item);
+            scanf("%c", &(items[i]));
             printf("enter value:");
-            scanf("%d", &value);
+            scanf("%d", &(values[i]));
             printf("enter whight:");
-            scanf("%d", &whight);
-            items[i] = items;
-            values[i] = value;
-            weights[i] = whight;
+             scanf("%d", &(weights[i]));
             selected_bool[i] = 0;
         }
 }
@@ -32,14 +30,14 @@ int knapSack (int weights[], int values[] , int selected_bool[]){
   int wItem , vItem ;
   int sumValue = 0;
   for (size_t i = 1; i < size+1; i++) {
-     wItem = weights[i-1];
-     vItem = values[i-1];
-     for (size_t j = 1; j < whight_bag+1; j++){
+    wItem = weights[i-1];
+    vItem = values[i-1];
+    for (size_t j = 1; j < whight_bag+1; j++){
         if(wItem>j){
             table[i][j] = table[i-1][j];
         }
         else{
-            table[i][j] = max(table[i-1][j], table[i-1][j-wItem] + vItem);
+            table[i][j] = (table[i-1][j] > (table[i-1][j-wItem] + vItem)) ? table[i-1][j] : (table[i-1][j-wItem] + vItem);
         }
       }
     for (int j = size - 1; j >= 0; j--){
@@ -58,11 +56,19 @@ int knapSack (int weights[], int values[] , int selected_bool[]){
 
 
 //*********************start main******************************
-int my_Knapsack(){
+int main(){
+    int maxProfit = 0;
     insertToList();
-    int maxProfit = knapSack (weights, values, selected_bool);
-    printf("Maximum profit : %d\n", &maxProfit);
-    printf("Items that give the maximum profit: [ %d", &selected_bool[0]);
-
+     maxProfit = knapSack (weights, values, selected_bool);
+    printf("Maximum profit : %d \n", maxProfit);
+    printf("Selected items: ");
+    for (int i = 0; i < size; i++)
+    {
+        if (selected_bool[i] == 1){
+            printf(" %c", items[i]);
+        }
+       
+    }
+    printf("\n");
     return 0;
 }

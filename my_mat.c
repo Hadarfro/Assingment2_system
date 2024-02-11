@@ -2,27 +2,27 @@
 #include "my_mat.h"
 
 int isPathExist(int graph[10][10],int i,int j);
+
 void getMatrix(int mat[10][10]){
     int num;
-for (size_t i = 0; i < 10; i++)
-{
-    for (size_t j = 0; j < 10; j++)
-    {
-        printf("enter values for the matrix");
-        mat[i][j] = scanf("%d", &num);
+    for (size_t i = 0; i < 10; i++) {
+        for (size_t j = 0; j < 10; j++) {
+            printf("\nenter values for the matrix: ");
+            mat[i][j] = scanf("%d", &num);
+        }
     }
-}
-
+    printf("finished filling the matrix\n");
 }
 void isPath(int graph[10][10]){
     int i,j;
+    printf("enter i and j to check if theres a path: ");
     scanf("%d %d", &i,&j);
     int isPathE = isPathExist(graph,i,j); 
     if(isPathE == 1){
-        printf("true");
+        printf("true\n");
     }
-    else if(isPathExist(graph,i,j) == 0){
-        printf("false");
+    else if(isPathE == 0){
+        printf("false\n");
     }
 } 
 
