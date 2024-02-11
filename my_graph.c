@@ -6,7 +6,7 @@
 int main() {
 char letter;
 int mat[10][10];
-    printf("enter a letter:\n");
+    printf("enter a letter: ");
     letter = getchar();
     while (letter!='D'||letter!= EOF) {
       if(letter == 'A'){
@@ -18,7 +18,7 @@ int mat[10][10];
       if (letter == 'c') {
             shortestPath(mat);
          } 
-      printf("enter a letter:\n");
+      printf("enter a letter: ");
       letter = getchar();
      }
 return 0;

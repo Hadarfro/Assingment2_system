@@ -15,7 +15,7 @@ void  insertToList(){
     char item;
     for (size_t i = 0; i < 5; i++) {
             printf("enter item:");
-            scanf("%c", &(items[i]));
+            scanf("%c", (items[i]));
             printf("enter value:");
             scanf("%d", &(values[i]));
             printf("enter whight:");

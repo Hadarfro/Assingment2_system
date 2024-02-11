@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-int isPathExist(int graph[10][10],int i,int j);
+int isPathExist(int graph[10][10],int i,int j,int check);
 
 void getMatrix(int mat[10][10]){
     int num;
@@ -17,7 +17,7 @@ void isPath(int graph[10][10]){
     int i,j;
     printf("enter i and j to check if theres a path: ");
     scanf("%d %d", &i,&j);
-    int isPathE = isPathExist(graph,i,j); 
+    int isPathE = isPathExist(graph,i,j,0); 
     if(isPathE == 1){
         printf("true\n");
     }
@@ -26,17 +26,25 @@ void isPath(int graph[10][10]){
     }
 } 
 
-int isPathExist(int graph[10][10],int i,int j){
+int isPathExist(int graph[10][10],int i,int j,int check){
     if (graph[i][j] != 0) {
         // There isn't a direct edge from i to j
-        return 1;
+        if(check!=-1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
 
     // Check if there is an indirect path through other vertices
     for (int k = 0; k < 10; k++) {
         if(k != i && k != j){
             if (graph[i][k] != 0) {
-                return isPathExist(graph, k, j);
+                return isPathExist(graph, k, j,check);
+             }
+             else{
+                check = -1;
              }
         }
     }
