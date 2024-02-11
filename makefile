@@ -6,9 +6,7 @@ AFLAGS = rcs
 .PHONY: all clean 
 
 all: my_graph my_Knapsack
-
-
-	       
+    
 my_graph: my_graph.o libMy_mat.a 
 	$(CC) $(CFLAGS) my_graph.o libMy_mat.a -o my_graph
 

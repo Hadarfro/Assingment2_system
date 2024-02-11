@@ -8,19 +8,37 @@ char letter;
 int mat[10][10];
     printf("enter a letter: ");
     letter = getchar();
-    while (letter!='D'||letter!= EOF) {
-      if(letter == 'A'){
-         getMatrix(mat);
-         }
-      if(letter == 'B'){
-             isPath(mat);
+
+     do {
+        printf("Enter a letter: ");
+        letter = getchar();
+
+        switch (letter) {
+            case 'A':
+                getMatrix(mat);
+                break;
+            case 'B':
+                isPath(mat);
+                break;
+            case 'C':
+                shortestPath(mat);
+                break;
+            case 'D':
+                // Optional: Add code for 'D' case if needed
+                break;
+            case EOF:
+                // Optional: Add code for EOF case if needed
+                break;
+            default:
+                printf("Invalid letter. Please enter A, B, C, or D.\n");
+                break;
         }
-      if (letter == 'c') {
-            shortestPath(mat);
-         } 
-      printf("enter a letter: ");
-      letter = getchar();
-     }
-return 0;
+
+        // Consume any remaining characters in the input buffer
+        while (getchar() != '\n');
+
+    } while (letter != 'D' && letter != EOF);
+
+    return 0;
 }
     

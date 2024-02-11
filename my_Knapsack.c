@@ -6,18 +6,14 @@
 int weights[size];
 int values[size];
 int selected_bool[size];
-int result[size];
 char items[size];
 
 
 void  insertToList(){
-    for (size_t i = 0; i < 5; i++) {
-            printf("enter item:");
-            scanf("%c", &(items[i]));
-            printf("enter value:");
-            scanf("%d", &(values[i]));
-            printf("enter whight:");
-             scanf("%d", &(weights[i]));
+    for (int i = 0; i < size; i++) {
+            scanf(" %c", &items[i]);
+            scanf(" %d", &values[i]);
+            scanf(" %d", &weights[i]);
             selected_bool[i] = 0;
         }
 }
