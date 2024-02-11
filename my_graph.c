@@ -6,13 +6,10 @@
 int main() {
 char letter;
 int mat[10][10];
-    printf("enter a letter: ");
-    letter = getchar();
 
      do {
         printf("Enter a letter: ");
         letter = getchar();
-
         switch (letter) {
             case 'A':
                 getMatrix(mat);
