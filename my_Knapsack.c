@@ -52,7 +52,7 @@ int main(){
     insertToList();
      maxProfit = knapSack (weights, values, selected_bool);
     printf("Maximum profit : %d \n", maxProfit);
-    printf("Selected items: ");
+    printf("Selected items:");
     for (int i = 0; i < size; i++)
     {
         if (selected_bool[i] == 1){
