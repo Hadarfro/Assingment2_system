@@ -14,7 +14,10 @@ void getMatrix(){
         }
     }
 }
-void printIsPath(){
+void printIsPath(){            
+
+
+    
     int i,j;
     scanf("%d %d", &i,&j);
     shortestPath(); 

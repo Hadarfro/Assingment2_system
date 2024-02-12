@@ -4,7 +4,7 @@
 
 int main() {
 char letter;
-    
+   
      do {
         letter = getchar();
         switch (letter) {
