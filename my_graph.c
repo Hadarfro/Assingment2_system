@@ -5,20 +5,18 @@
 
 int main() {
 char letter;
-int mat[10][10];
-
+    
      do {
-        printf("Enter a letter: ");
         letter = getchar();
         switch (letter) {
             case 'A':
-                getMatrix(mat);
+                getMatrix();
                 break;
             case 'B':
-                isPath(mat);
+                printIsPath();
                 break;
             case 'C':
-                shortestPath(mat);
+                printShortestPath();
                 break;
             case 'D':
                 // Optional: Add code for 'D' case if needed
@@ -30,7 +28,6 @@ int mat[10][10];
                 printf("Invalid letter. Please enter A, B, C, or D.\n");
                 break;
         }
-
         // Consume any remaining characters in the input buffer
         while (getchar() != '\n');
 
