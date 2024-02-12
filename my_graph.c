@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "my_mat.h"
-#include "my_mat.c"
 
 
 int main() {
@@ -25,7 +24,6 @@ char letter;
                 // Optional: Add code for EOF case if needed
                 break;
             default:
-                printf("Invalid letter. Please enter A, B, C, or D.\n");
                 break;
         }
         // Consume any remaining characters in the input buffer

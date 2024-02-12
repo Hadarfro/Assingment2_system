@@ -6,19 +6,16 @@ int graph[V][V];
 int dist[V][V];
 void getMatrix(){
     int num;
-    printf("\nenter values for the matrix: ");
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
-            scanf("%d\t", &num);
+            scanf(" %d\t", &num);
             graph[i][j] = num;
             dist[i][j] = num;
         }
     }
-    printf("finished filling the matrix\n");
 }
 void printIsPath(){
     int i,j;
-    printf("enter i and j to check if theres a path:");
     scanf("%d %d", &i,&j);
     shortestPath(); 
     if(dist[i][j] > 0){
@@ -33,7 +30,6 @@ void printIsPath(){
 
 void printShortestPath(){
 int i,j;
-printf("enter i and j");
 scanf("%d %d", &i , &j);
 shortestPath();
 if(i==j){
@@ -41,7 +37,7 @@ if(i==j){
    return; 
 }
     if(dist[i][j]==0){
-        printf("-1");
+        printf("the shortest path is: -1");
         return;
     }
     else{
@@ -69,3 +65,4 @@ void shortestPath(){
         }
     }
 }
+
