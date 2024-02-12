@@ -26,8 +26,6 @@ char letter;
             default:
                 break;
         }
-        // Consume any remaining characters in the input buffer
-        while (getchar() != '\n');
 
     } while (letter != 'D' && letter != EOF);
 

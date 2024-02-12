@@ -8,19 +8,20 @@ void getMatrix(){
     int num;
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
-            scanf(" %d\t", &num);
+            scanf("%d", &num);
             graph[i][j] = num;
             dist[i][j] = num;
         }
     }
 }
 void printIsPath(){            
-
-
-    
     int i,j;
     scanf("%d %d", &i,&j);
     shortestPath(); 
+    if(i==j){
+        printf("False\n");
+        return;
+    }
     if(dist[i][j] > 0){
         printf("True\n");
         return;
@@ -36,15 +37,15 @@ int i,j;
 scanf("%d %d", &i , &j);
 shortestPath();
 if(i==j){
-   printf("-1");
+   printf("-1\n");
    return; 
 }
     if(dist[i][j]==0){
-        printf("the shortest path is: -1");
+        printf("-1\n");
         return;
     }
     else{
-    printf("the shortest path is: %d\n", dist[i][j]);
+    printf("%d\n", dist[i][j]);
     return;
     }
 }
